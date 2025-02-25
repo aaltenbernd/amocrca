@@ -28,7 +28,7 @@ def parse_args():
     
     # AmocRCA Options:
     parser.add_argument("--amoc", action='store_true', help="Enable AMOC segmentation")
-    parser.add_argument("--rcr", action='store_true', help="Enable relative correlative ranking")
+    parser.add_argument("--rcr", action='store_true', help="Enable relative correlation ranking")
     parser.add_argument("--lma", action='store_true', help="Enable leading metric alignment")
     
     args = parser.parse_args()
@@ -41,7 +41,7 @@ def parse_args():
     print()
     print(f"-> AmocRCA:")
     print(f"     AMOC Segmentation: {args.amoc}")
-    print(f"     Relative Correlative Ranking: {args.rcr}")
+    print(f"     Relative Correlation Ranking: {args.rcr}")
     print(f"     Leading Metric Alignment: {args.lma}")
 
     return args
