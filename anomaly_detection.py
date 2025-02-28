@@ -86,13 +86,10 @@ def run(datapaths, args):
 if __name__ == '__main__':    
     parser = argparse.ArgumentParser(description="Parse method and penalty options.")
     parser.add_argument("--method", type=str, required=True, help="Select the method to use. This argument is required.")
-    parser.add_argument("--penalty", type=float, help="Select penalty (required if --method is 'amoc').")
     parser.add_argument("--dataset", type=str, required=True, help="Select dataset.")
     parser.add_argument("--simple", action='store_true', help="Select simple.")
 
     args = parser.parse_args()
-    if args.method == "amoc" and args.penalty is None:
-        parser.error("--penalty is required when --method is 'amoc'.")
     
     datasets = [                
         ("data/combined/sock-shop", "simple_data.csv", True),
