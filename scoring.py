@@ -8,8 +8,6 @@ from utils import to_services
 def scoring(data, data_scaled, anomaly, rca=None, amoc=False, rcr=False, lma=False):    
     if amoc:
         anomaly = amoc_segmentation(data_scaled.to_numpy())
-        if anomaly <= 1 or anomaly >= len(data):
-            print("what the fuck?")
 
     if anomaly >= len(data_scaled):
         return {col: 0 for col in data_scaled.columns}

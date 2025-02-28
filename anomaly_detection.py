@@ -46,10 +46,7 @@ def run(datapaths, args):
         data_scaled = data_scaled[cols]
 
         anomaly_detection = globals()[args.method]
-        if args.method == "amoc":
-            anomaly_detection = partial(anomaly_detection, penalty=args.penalty)
-        else:
-            anomaly_detection = partial(anomaly_detection)
+        anomaly_detection = partial(anomaly_detection)
 
         start = time()
         anomalies = anomaly_detection(data=data_scaled)
